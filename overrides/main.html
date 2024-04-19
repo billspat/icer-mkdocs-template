@@ -1,0 +1,211 @@
+{% extends "base.html" %}
+
+{% block announce %}
+<ul class="horiz-link-list footer-list-lg">
+    <li>
+        <a href="https://icer.msu.edu/">
+            <span class="twemoji">
+                {% include ".icons/material/home.svg" %}
+            </span>
+            ICER Home Page
+        </a>
+    </li>
+    <li>
+        <a href="https://blog.icer.msu.edu/">
+            <span class="twemoji">
+                {% include ".icons/material/bell.svg" %}
+            </span>
+            ICER Announcements Blog
+        </a>
+    </li>
+    <li>
+        <a href="https://contact.icer.msu.edu/">
+            <span class="twemoji">
+                {% include ".icons/material/email.svg" %}
+            </span>
+            ICER Contact Page
+        </a>
+    </li>
+</ul>
+{% endblock %}
+
+{% block header %}
+
+<header class="md-header" data-md-component="header">
+    <nav
+    class="md-header__inner md-grid"
+    aria-label="{{ lang.t('header.title') }}"
+  >
+    
+    <!-- <H1>HERE</H1> -->
+    <a href="https://docs.icer.msu.edu/" class="md-header__button md-logo" data-md-component="logo">
+    {% include "partials/logo.html" %}
+    </a>
+        <!-- Button to open drawer -->
+    <label class="md-header__button md-icon" for="__drawer">
+        {% include ".icons/material/menu" ~ ".svg" %}
+    </label>
+
+    <div class="md-header__title" data-md-component="header-title">
+        <div class="md-header__ellipsis">
+          <div class="md-header__topic">
+            <span class="md-ellipsis">
+              ICER
+            </span>
+          </div>
+          <div class="md-header__topic" data-md-component="header-topic">
+            <span class="md-ellipsis">
+              {% if page and page.meta and page.meta.title %}
+                {{ page.meta.title }}
+              {% else %}
+                {{ page.title }}
+              {% endif %}
+            </span>
+          </div>
+        </div>
+    </div>
+
+        <!-- Button to open search modal -->
+        <label class="md-header__button md-icon" for="__search">
+        {% include ".icons/material/magnify.svg" %}
+        </label>
+
+        <!-- Search interface -->
+        {% include "partials/search.html" %}
+  </nav>
+
+</header>
+
+<div class="MSUwrapper" id="MSUheader">
+    <div id="MSUmasthead" role="banner">
+        <!-- <a href="http://www.msu.edu"> -->
+            <!-- if using a dark background change the img src to images/masthead-helmet-white.png-->
+            <!-- <img class="screen-msugraphic" alt="ICER masthead graphic"
+                src="https://msu-icer.github.io/hpcc-user-documentation/assets/images/Header_Banner_small.jpg" /> previous-->
+
+            <img class="screen-msugraphic mdAndLgBannerOnly" alt="ICER masthead graphic"
+                src="/assets/images/Header_Banner_small_v8.jpeg" />
+            <div id="cropper">
+            <img class="screen-msugraphic bsmBannerOnly" alt="ICER masthead graphic"
+                src="/assets/images/Mobile_Documentation_Header.png" />
+              </div>
+
+              <img class="screen-msugraphic smBannerOnly" alt="ICER masthead graphic"
+                src="/assets/images/Mobile_image.png" />
+                <!--! might have to change the relative path to a linked path like above -->
+        <!-- </a> -->
+    </div>
+    
+</div>
+    
+{% endblock %}
+
+{% block footer %}
+
+    <!-- <footer class="MSUwrapper light-background" id="MSUstandardFooter" role="contentinfo">
+
+        <div class="fourMSUcolumns" id="standard-footer-MSU-wordmark">
+            <a href="http://www.msu.edu">
+
+                <img alt="Michigan State University Wordmark" class="screen-msuwordmark"
+                    src="https://msu-icer.github.io/hpcc-user-documentation/assets/images/msu-wordmark-green.png" height="47" width="221" />
+            </a>
+        </div>
+        <div class="twelveMSUcolumns">
+            <div id="standard-footer-site-links">
+                <ul>
+            <li><a href="http://icer.msu.edu/contact">Contact Information</a></li>
+            <li><a href="https://msu.edu/privacy">Privacy Policy</a></li>
+            <li><a href="https://msu.edu/accessibility">Site Accessibility</a></li>
+		</ul>
+            </div>
+            <div id="standard-footer-MSU-info">
+                <ul>
+    
+    
+                    
+                    <li>Call MSU: <span class="msu-phone"><strong>(517) 355-1855</strong></span></li>
+                    <li>Visit: <strong><a href="http://msu.edu">msu.edu</a></strong></li>
+                    <li>MSU is an affirmative-action, equal-opportunity employer.</li>
+                    <li><a href="http://oie.msu.edu/"><strong>Notice of Nondiscrimination</strong></a></li>
+                </ul>
+                <ul>
+                    <li class="spartans-will">Spartans Will.</li>
+                    <li>© Michigan State University</li>
+                </ul>
+            </div>
+        </div>
+    </footer> -->
+
+    <div id="page" class="page with-navigation">
+
+
+      <div class="everything-wrapper">
+  
+        <footer role="contentinfo">
+  
+          <section class="footer-lower">
+            <div class="container-narrow">
+              <div class="padded-plain-block">
+  
+                <div class="media-lg-only">
+                  <div class="media-lg-only__media media-lg-only--msu">
+                    <a href="http://www.msu.edu/" aria-label="Michigan State University Homepage Link" target="_blank"
+                      class="neg-ext">
+                      <!-- <img
+                        src="images/msu-wordmark-logo.svg"
+                        alt="Michigan State University logo">
+                    </a> -->
+                   <img
+                        src="https://docs.icer.msu.edu/assets/images/msu-wordmark-logo.svg"
+                        alt="Michigan State University logo">
+                    </a>
+                  </div>
+  
+                  <div class="media-lg-only__content">
+                    <div role="navigation" aria-label="ICER Contact Information">
+                      <ul class="horiz-link-list footer-list-lg">
+                        <!-- <li>Call ICER: <a href="tel:+1-517-353-9309" class="phone-link">(517) 353-9309</a></li> -->
+                        <li><a href="https://icer.msu.edu/contact">Contact Information</a></li>
+                        <!-- <li><a href="https://icer.msu.edu/sitemap">Site Map</a></li> #### might have to add a different mkdocs feature for site maps-->
+                        <li><a href="https://msu.edu/privacy" class="ext" target="_blank">Privacy Statement<span
+                              class="ext"><span class="element-invisible"> (link is external)</span></span></a></li>
+                        <li><a href="https://msu.edu/accessibility" class="ext" target="_blank">Site
+                            Accessibility<span class="ext"><span class="element-invisible"> (link is
+                                external)</span></span></a></li>
+                      </ul>
+                    </div>
+  
+                    <hr class="footer-hr">
+  
+                    <div role="navigation" aria-label="MSU Contact Information">
+                      <ul class="horiz-link-list footer-list-sm">
+                        <li>Call MSU: <a href="tel:+1-517-355-1855" class="phone-link footer-lime-link">(517) 355-1855</a>
+                        </li>
+                        <li>Visit: <a href="http://www.msu.edu/" target="_blank"
+                            class="neg-ext footer-lime-link ext">msu.edu<span class="ext"><span class="element-invisible">
+                                (link is external)</span></span></a></li>
+                        <li>MSU is an affirmative-action, equal-opportunity employer.</li>
+                      </ul>
+                    </div>
+  
+                    <ul class="horiz-link-list footer-list-sm">
+                      <li><strong>SPARTANS WILL.</strong></li>
+                      <li>© Michigan State University Board of Trustees</li>
+                    </ul>
+                  </div>
+                </div>
+  
+              </div>
+            </div>
+          </section>
+        </footer>
+  
+      </div>
+    </div>
+
+
+{% endblock %}
+{% block extrahead %}
+<meta name="google-site-verification" content="2ii_V-LUtafEjdOkDT9Sh4326p85vxm9HAeqjFvUElI" />
+{% endblock %}

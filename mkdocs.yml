@@ -1,0 +1,121 @@
+site_name: MSU HPCC User Documentation
+
+nav:
+  - "Home": "index.md"
+  - "About": "about.md"
+  - "FAQ": "Frequently_Asked_Questions_FAQ_.md"
+  - "Glossary": HPC_Glossary.md
+  - "Tags": tags.md
+
+remote_name: origin
+
+theme:
+  name: material
+  font:
+    text: Gotham
+  logo: assets/icer-small-logo-white.png
+  favicon: assets/icer-small-logo-white.png
+  custom_dir: overrides
+  feature:
+    - navigation.expand
+    - navigation.instant
+    - navigation.indexes
+    - search.suggest
+    - search.highlight
+    - content.code.annotate
+
+  features:
+    - navigation.top
+    - content.action.edit
+
+plugins:
+  # Entries that are overridden by inheritance MUST be in the "entry: {}" format
+  # not the "- entry" format
+  - search:
+      lang: en
+  - tags:
+      tags_file: tags.md
+      tags_compare: !!python/name:material.plugins.tags.casefold
+        # Allows adding additional tag contents pages
+        # Tags to be included in a contents page must be specified
+        # Otherwise all tags are included
+
+
+      tags_extra_files:
+        Lab_Notebooks.md:
+          - labnotes
+        #accessHPCC_overview.md: {}
+        #filesystem_overview.md: {}
+        #Powertools.md: {}
+        #SLURM_overview.md: {}
+  # # git information for edit dates an        
+  # - git-revision-date-localized:
+  #     enable_creation_date: true
+  # - git-authors
+  # list of redirects, add pages that have changed titles or filenames, follow example 
+  # - redirects:
+  #     redirect_maps:
+  #       "previous-page.md": "Current_Page.md"
+
+# Gets info from github
+# uncomment the 'git' features above and replace 'github-project' with actual github project to use
+repo_url: https://github.com/MSU-ICER/github-project
+# Renames repo if we decide to display it top right
+repo_name: reponame
+# Links directly to gitlab for editing (accessible by login for ICER staff only)
+# this work with edit buttons, which are disabled for template (see ICER docs for examples)
+# replace {gitlab-project} with actual project name
+edit_uri: "https://gitlab.msu.edu/icer/gitlab-project/-/tree/main/docs"
+
+extra_css:
+  - stylesheets/extra.css
+  - overrides/assets/stylesheets/footer.css
+
+markdown_extensions:
+  - abbr
+  - pymdownx.highlight:
+      linenums: true # enable linenums to all of the code snippets.
+  - attr_list
+  - admonition
+  - def_list
+  - pymdownx.caret
+  - pymdownx.mark
+  - pymdownx.tilde
+  - pymdownx.inlinehilite
+  - pymdownx.snippets:
+      auto_append:
+        - glossary/abbreviations.md
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.details
+  - meta
+  - pymdownx.keys
+
+extra:
+  tags:
+    lab notebook: labnotes
+
+# analytics are disable dfor template and require G-analytics account and property ID
+  # analytics:
+  #   provider: google
+  #   property: {G-ID}
+# feedback is disabled for template, and requires a google form, which should be limited to MSU only otherwise there will be spam
+  #   feedback:
+  #     title: Was this page helpful?
+  #     ratings:
+  #       - icon: material/emoticon-happy-outline
+  #         name: This page was helpful
+  #         data: 1
+  #         note: >-
+  #           Thanks for your feedback!
+  #       - icon: material/emoticon-sad-outline
+  #         name: This page could be improved
+  #         data: 0
+  #         note: >-
+  #           Thanks for your feedback! Help us improve this page by
+  #           using our <a href="https://docs.google.com/forms/{form_id}?usp=pp_url&entry.{{field_id}}={title}" target="_blank" rel="noopener">feedback form</a>.
+  #           Make sure you are logged in to your MSU google account.
+
+
+# copyright: Copyright &copy; Michigan State University
